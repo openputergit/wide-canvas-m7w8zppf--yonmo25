@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gujju Box Cricket - Book Your Cricket Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-pattern {
+            background-color: #1a365d;
+            background-image: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), 
+                            url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .timeslot {
+            transition: all 0.3s ease;
+        }
+        .timeslot:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <i class="bi bi-cricket text-2xl text-blue-800"></i>
+                    <span class="ml-2 text-xl font-bold text-blue-800">Gujju Box Cricket</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#home" class="text-gray-700 hover:text-blue-800">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-800">About</a>
+                    <a href="#booking" class="text-gray-700 hover:text-blue-800">Book Now</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-800">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700">
+                        <i class="bi bi-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-4">
+            <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Home</a>
+            <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">About</a>
+            <a href="#booking" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Book Now</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern min-h-screen flex items-center justify-center text-white pt-16">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Welcome to Gujju Box Cricket</h1>
+            <p class="text-xl mb-8">Experience cricket like never before in our state-of-the-art facility</p>
+            <a href="#booking" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                Book Your Slot Now
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Why Choose Us?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-gray-50 rounded-lg shadow-md">
+                    <i class="bi bi-trophy text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Professional Setup</h3>
+                    <p class="text-gray-600">State-of-the-art facilities with professional equipment</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg shadow-md">
+                    <i class="bi bi-clock text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Flexible Timing</h3>
+                    <p class="text-gray-600">Open 7 days a week from 6 AM to 11 PM</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg shadow-md">
+                    <i class="bi bi-people text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Group Bookings</h3>
+                    <p class="text-gray-600">Special packages for corporate and group events</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-16 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Book Your Slot</h2>
+            <form id="bookingForm" class="bg-white rounded-lg shadow-lg p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Name</label>
+                        <input type="text" id="name" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" id="email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Date</label>
+                        <input type="date" id="date" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Number of Players</label>
+                        <select id="players" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="6">6 Players</option>
+                            <option value="8">8 Players</option>
+                            <option value="10">10 Players</option>
+                            <option value="12">12 Players</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <label class="block text-gray-700 mb-2">Select Time Slot</label>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <button type="button" class="timeslot p-2 border rounded-lg text-center hover:bg-blue-50" data-time="09:00">9:00 AM</button>
+                        <button type="button" class="timeslot p-2 border rounded-lg text-center hover:bg-blue-50" data-time="11:00">11:00 AM</button>
+                        <button type="button" class="timeslot p-2 border rounded-lg text-center hover:bg-blue-50" data-time="13:00">1:00 PM</button>
+                        <button type="button" class="timeslot p-2 border rounded-lg text-center hover:bg-blue-50" data-time="15:00">3:00 PM</button>
+                        <button type="button" class="timeslot p-2 border rounded-lg text-center hover:bg-blue-50" data-time="17:00">5:00 PM</button>
+                        <button type="button" class="timeslot p-2 border rounded-lg text-center hover:bg-blue-50" data-time="19:00">7:00 PM</button>
+                        <button type="button" class="timeslot p-2 border rounded-lg text-center hover:bg-blue-50" data-time="21:00">9:00 PM</button>
+                    </div>
+                </div>
+                <input type="hidden" id="selectedTime">
+                <button type="submit" class="w-full mt-8 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+                    Book Now
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Location</h3>
+                    <p class="mb-4"><i class="bi bi-geo-alt text-blue-600 mr-2"></i> 123 Cricket Street, Ahmedabad, Gujarat</p>
+                    <p class="mb-4"><i class="bi bi-telephone text-blue-600 mr-2"></i> +91 98765 43210</p>
+                    <p><i class="bi bi-envelope text-blue-600 mr-2"></i> info@gujjuboxcricket.com</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Opening Hours</h3>
+                    <p class="mb-2">Monday - Friday: 6:00 AM - 11:00 PM</p>
+                    <p class="mb-2">Saturday: 6:00 AM - 11:00 PM</p>
+                    <p>Sunday: 6:00 AM - 11:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2023 Gujju Box Cricket. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Time slot selection
+        const timeSlots = document.querySelectorAll('.timeslot');
+        const selectedTimeInput = document.getElementById('selectedTime');
+
+        timeSlots.forEach(slot => {
+            slot.addEventListener('click', () => {
+                // Remove selected class from all slots
+                timeSlots.forEach(s => s.classList.remove('bg-blue-500', 'text-white'));
+                // Add selected class to clicked slot
+                slot.classList.add('bg-blue-500', 'text-white');
+                selectedTimeInput.value = slot.dataset.time;
+            });
+        });
+
+        // Form submission
+        const bookingForm = document.getElementById('bookingForm');
+
+        bookingForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!selectedTimeInput.value) {
+                alert('Please select a time slot');
+                return;
+            }
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                date: document.getElementById('date').value,
+                time: selectedTimeInput.value,
+                players: document.getElementById('players').value
+            };
+
+            try {
+                const response = await fetch('/book', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    alert('Booking confirmed! We will send you a confirmation email shortly.');
+                    bookingForm.reset();
+                    timeSlots.forEach(s => s.classList.remove('bg-blue-500', 'text-white'));
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Something went wrong. Please try again.');
+            }
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
